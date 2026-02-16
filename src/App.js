@@ -9,12 +9,11 @@ import "./App.css";
 
 export default function Portfolio() {
   const [activeTab, setActiveTab] = useState("ai");
-const hobbies = [
-  { id: 1, src: "/images/1.jpg", title: "Painting" },
-  { id: 2, src: "/images/bluepaint.jpg", title: "Art " },
-  { id: 3, src: "/images/roadtrippaint.jpg", title: "Road Trip Painting" },
-  // ... ကျန်တာတွေ ထည့်ပါ
-];
+// const hobbies = [
+ // { id: 1, src: "/images/1.jpg", title: "Painting" },
+ // { id: 2, src: "/images/bluepaint.jpg", title: "Art " },
+ // { id: 3, src: "/images/roadtrippaint.jpg", title: "Road Trip Painting" },
+  // ... ကျန်တာတွေ ထည့်ပါ];
 const videos = [
   { id: 1, src: "https://www.youtube.com/embed/jS_uznSJ4Sk" }, 
   { id: 2, src: " https://www.youtube.com/embed/IftBju-3Ics" }
