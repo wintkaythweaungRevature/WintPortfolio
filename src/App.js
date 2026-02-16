@@ -28,7 +28,7 @@ const videos = [
   {/* ROUND PROFILE IMAGE */}
   <img
     src="/images/profile.jpg" // ဒီနေရာမှာ နာမည်နဲ့ Extension မှန်ဖို့ လိုပါတယ်။
-   
+   alt = "Wint Kay Thwe Aung"
     className="w-40 h-40 rounded-full border-4 border-white object-cover mb-6 shadow-2xl"
   />
   
