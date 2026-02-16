@@ -9,7 +9,8 @@ import "./App.css";
 
 export default function Portfolio() {
   const [activeTab, setActiveTab] = useState("ai");
- const hobbies = [
+ const hobbies = 
+ [
   { id: 1, src: "/images/1.jpg", title: "Painting" },
   { id: 2, src: "/images/bluepaint.jpg", title: "Art " },
   { id: 3, src: "/images/roadtrippaint.jpg", title: "Road Trip Painting" },
@@ -41,7 +42,7 @@ const videos = [
     Full-Stack Developer <br /> AI & Cloud Engineer
   </p>
 
-  {/* SIDEBAR BUTTONS */}
+  {/* Hobbies Section */}
   {/* SIDEBAR BUTTONS */}
 <div className="flex flex-col gap-4 w-full">
   {[
@@ -207,21 +208,42 @@ Curiosity drives everything I do.
 </section>
 
 {/* HOBBIES SECTION */}
-         
-          <div className="grid md:grid-cols-2 gap-8">
-  {videos.map((video) => (
-    <div key={video.id} className="rounded-[2rem] overflow-hidden shadow-2xl bg-black aspect-video">
-      <iframe
-        className="w-full h-full"
-        src={video.src}
-        title="YouTube video player"
-        frameBorder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        allowFullScreen
-      ></iframe>
-    </div>
-  ))}
-</div>
+ {/* HOBBIES SECTION */}
+<section id="hobbies" className="space-y-12">
+  <h2 className="text-4xl font-black text-center mb-16 uppercase tracking-tight">Creative Expressions 🎨</h2>
+
+  {/* Image Hobbies Grid */}
+  <div className="grid md:grid-cols-3 gap-8">
+    {hobbies.map((hobby) => (
+      <div key={hobby.id} className="group relative rounded-[2rem] overflow-hidden shadow-xl aspect-square bg-slate-100">
+        <img
+          src={hobby.src}
+          alt={hobby.title}
+          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+        />
+        <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+          <p className="text-white font-bold text-xl">{hobby.title}</p>
+        </div>
+      </div>
+    ))}
+  </div>
+
+  {/* Video Hobbies Grid */}
+  <div className="grid md:grid-cols-2 gap-8">
+    {videos.map((video) => (
+      <div key={video.id} className="rounded-[2rem] overflow-hidden shadow-2xl bg-black aspect-video">
+        <iframe
+          className="w-full h-full"
+          src={video.src}
+          title="YouTube video player"
+          frameBorder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowFullScreen
+        ></iframe>
+      </div>
+    ))}
+  </div>
+</section>
 
           {/* AI INTERACTIVE SECTION */}
           <section className="py-20 border-t-2 border-slate-100">
