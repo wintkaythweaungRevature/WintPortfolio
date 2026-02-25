@@ -32,7 +32,7 @@ const videos = [
     <div className="flex min-h-screen bg-white">
 
       {/* LEFT SIDEBAR - Fixed Position */}
-      <div className="w-80 bg-[#000066] text-white fixed h-full flex flex-col items-center p-10 shadow-2xl z-50">
+      <div className="w-85 bg-[#000066] text-white fixed h-full flex flex-col items-center p-10 shadow-2xl z-50">
   {/* ROUND PROFILE IMAGE */}
   <img
     src="/images/profile.jpg" // ဒီနေရာမှာ နာမည်နဲ့ Extension မှန်ဖို့ လိုပါတယ်။
@@ -361,7 +361,6 @@ const videos = [
   </div>
 </section>
 
-{/* HOBBIES SECTION */}
  {/* HOBBIES SECTION */}
 <section id="hobbies" className="space-y-12">
   <h2 className="text-4xl font-black text-center mb-16 uppercase tracking-tight">Creative Expressions 🎨</h2>
