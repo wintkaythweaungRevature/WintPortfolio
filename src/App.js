@@ -130,7 +130,7 @@ const videos = [
           {/* INTRODUCTION SECTION */}
           <section id="intro" className="text-center py-20 bg-gradient-to-b from-white to-gray-50">
     <h2 className="text-3xl font-black mb-8 bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-indigo-500">
-        Hi, Liberty ! 👋
+        Let Me Introduce Myself!  👋
     </h2>
     <p className="max-w-3xl mx-auto text-xl text-gray-700 leading-relaxed font-light">
          I’m <span className="font-bold text-gray-900">Wint Kay Thwe Aung</span> — a full-stack developer and strategic operations specialist dedicated to building scalable, AI-powered systems that drive business growth.
@@ -325,16 +325,19 @@ const videos = [
       <div className="space-y-6">
         <h3 className="text-2xl font-bold text-[#000066] border-b-2 border-blue-100 pb-2">Education 🎓</h3>
         <div>
-          <h4 className="font-bold">Computer Science Student</h4>
+          <h4 className="font-bold">BA English - Yangon University </h4>
+           <h4 className="font-bold">IADCS - Greenwhich University </h4>
           <p className="text-sm text-gray-500">Focus on AI & Software Engineering</p>
         </div>
       </div>
       
       <div className="space-y-6">
-        <h3 className="text-2xl font-bold text-[#000066] border-b-2 border-blue-100 pb-2">Experience 💻</h3>
+        <h3 className="text-2xl font-bold text-[#000066] border-b-2 border-blue-100 pb-2">Experiences In Tech 💻</h3>
         <div>
-          <h4 className="font-bold">Full-Stack Developer</h4>
-          <p className="text-sm text-gray-500">Spring Boot | React | AWS Deployment</p>
+          <h4 className="font-bold">Software Engineer </h4>
+                  
+          <p className="text-sm font-bold text-gray-500">Revature | Conveythis</p>
+          <p className="text-sm text-gray-500">Spring Boot |.MVC | D365 | React | AWS Deployment</p>
         </div>
       </div>
     </div>
