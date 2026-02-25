@@ -4,11 +4,16 @@ import { Github, Linkedin, Mail } from "lucide-react";
 import { Card, CardContent } from "./Component/UI/Card";
 import "./App.css";
 
-
-
-
 export default function Portfolio() {
   const [activeTab, setActiveTab] = useState("ai");
+  
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+// This function prevents background scrolling when the modal is open
+if (typeof document !== 'undefined') {
+  document.body.style.overflow = isModalOpen ? 'hidden' : 'unset';
+}
  const hobbies = 
  [
   { id: 1, src: "/images/1.jpg", title: "Painting" },
@@ -105,6 +110,8 @@ const videos = [
       { id: "intro", label: "Introduction" },
       { id: "skills", label: "Skills" },
       { id: "projects", label: "Projects" },
+      { id: "experiences", label: "Experiences" },
+      
       { id: "cv", label: "CV" },
       { id: "hobbies", label: "Hobbies" }
     ].map((link) => (
@@ -121,21 +128,161 @@ const videos = [
         <div className="p-12 space-y-32 max-w-6xl mx-auto">
 
           {/* INTRODUCTION SECTION */}
-          <section id="intro" className="text-center py-20">
-            <h2 className="text-5xl font-black mb-8">Introduction 👋</h2>
-            <p className="max-w-3xl mx-auto text-xl text-gray-600 leading-relaxed">
-             Hi, I’m Wint Kay Thwe Aung — a Computer Science student and full-stack developer passionate about building scalable, AI-powered applications.
+          <section id="intro" className="text-center py-20 bg-gradient-to-b from-white to-gray-50">
+    <h2 className="text-3xl font-black mb-8 bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-indigo-500">
+        Hi, Liberty ! 👋
+    </h2>
+    <p className="max-w-3xl mx-auto text-xl text-gray-700 leading-relaxed font-light">
+         I’m <span className="font-bold text-gray-900">Wint Kay Thwe Aung</span> — a full-stack developer and strategic operations specialist dedicated to building scalable, AI-powered systems that drive business growth.
+    </p>
+    
+    <p className="max-w-3xl mx-auto mt-6 text-lg text-gray-600 leading-relaxed">
+        I bridge the gap between <span className="text-indigo-600 font-semibold">technical engineering</span> and <span className="text-indigo-600 font-semibold">executive leadership</span>. Whether I am architecting multi-modal AI applications with Spring Boot or optimizing financial workflows for international chairmen, my focus is always on efficiency, precision, and performance.
+    </p>
 
-I specialize in backend engineering with Spring Boot, frontend development with React, and cloud deployment on AWS. I enjoy designing clean APIs, automating workflows, and turning complex ideas into production-ready systems.
+    <p className="max-w-3xl mx-auto mt-6 text-lg text-gray-600 leading-relaxed italic">
+        "I believe that engineering and entrepreneurship share the same foundation: the ability to see structure within chaos and the drive to build something better."
+    </p>
+      {/*teach stack row */}{/* Tech Stack Row - Centered */}
+      
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"></link>
 
-Beyond technology, I’m deeply interested in art, music, films, and creative expression. I believe creativity and engineering share the same foundation — structure, imagination, and constant experimentation.
 
-I’m a lifelong learner who’s always exploring something new — whether it’s a new framework, a different language, a piece of music, or even discovering new latte flavors that spark inspiration ☕.
+<div className="mt-12 flex flex-col items-center">
+  <div className="flex items-center gap-6 py-4 px-8 bg-white/50 rounded-full shadow-sm border border-gray-100">
+    <span className="text-blue-500 font-extrabold text-xs tracking-widest uppercase">
+      Tech Stack:
+    </span>
 
-Curiosity drives everything I do.
-            </p>
-          </section>
+    <div className="flex items-center gap-5 text-2xl text-gray-400">
+      {/* Muted Icons */}
+      <i className="devicon-java-plain hover:text-red-600 transition-colors" title="Java"></i>
+      <i className="devicon-spring-plain hover:text-green-500 transition-colors" title="Spring Boot"></i>
+      <i className="devicon-python-plain hover:text-blue-400 transition-colors" title="Python"></i>
+      <i className="devicon-react-original hover:text-cyan-400 transition-colors" title="React"></i>
+      <i className="devicon-csharp-plain hover:text-purple-600 transition-colors" title="C#"></i>
+      <i className="devicon-githubactions-plain hover:text-blue-500 transition-colors" title="GitHub Actions"></i>
+      <i className="devicon-amazonwebservices-plain-wordmark hover:text-orange-400 transition-colors" title="AWS Hosting"></i>
+      <i className="devicon-postgresql-plain hover:text-blue-700 transition-colors" title="PostgreSQL"></i>
+      
+      {/* Highlighted Docker Logo */}
+      <div className="flex items-center justify-center w-9 h-9 bg-[#002438] rounded-full ml-2 shadow-md">
+        <i className="devicon-docker-plain text-white text-lg"></i>
+      </div>
+    </div>
+  </div>
+</div>
 
+{/* COVER LETTER TRIGGER */}
+<div className="mt-8 flex justify-center">
+  <button 
+    onClick={() => setIsModalOpen(true)}
+    className="px-6 py-2 bg-white border border-gray-200 text-[#000066] rounded-full font-bold shadow-sm hover:shadow-md hover:bg-slate-50 transition-all flex items-center gap-2"
+  >
+    <span className="text-blue-500">📄</span> Read Cover Letter
+  </button>
+</div>
+
+    <div className="mt-10 flex justify-center gap-4">
+        <span className="px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-sm font-medium">Software Engineering</span>
+        <span className="px-4 py-2 bg-indigo-100 text-indigo-700 rounded-full text-sm font-medium">Executive Support</span>
+        <span className="px-4 py-2 bg-purple-100 text-purple-700 rounded-full text-sm font-medium">Data Analytics</span>
+    </div>
+<AnimatePresence>
+  {isModalOpen && (
+    <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6">
+      {/* 1. Backdrop (Blurred background) */}
+      <motion.div 
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        onClick={() => setIsModalOpen(false)}
+        className="absolute inset-0 bg-[#001144]/40 backdrop-blur-md"
+      />
+      
+      {/* 2. Modal Window */}
+      <motion.div 
+        initial={{ scale: 0.9, opacity: 0, y: 20 }}
+        animate={{ scale: 1, opacity: 1, y: 0 }}
+        exit={{ scale: 0.9, opacity: 0, y: 20 }}
+        className="relative bg-white rounded-[2.5rem] shadow-2xl max-w-2xl w-full max-h-[85vh] overflow-hidden flex flex-col border border-white/20"
+      >
+        {/* Header - Navy Gradient */}
+        <div className="p-6 bg-gradient-to-r from-[#000066] to-[#001144] flex justify-between items-center">
+          <div className="flex items-center gap-3">
+            <div className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center">
+              <span className="text-white text-xl">📝</span>
+            </div>
+            <h3 className="text-xl font-bold text-white tracking-tight">Professional Cover Letter</h3>
+          </div>
+          <button 
+            onClick={() => setIsModalOpen(false)}
+            className="w-10 h-10 flex items-center justify-center rounded-full bg-white/10 text-white hover:bg-red-500 transition-colors"
+          >
+            &times;
+          </button>
+        </div>
+
+        {/* Body - Clean Paper Style */}
+        <div className="p-10 overflow-y-auto text-left text-gray-700 leading-relaxed space-y-6 scrollbar-hide text-sm sm:text-base">
+          <div className="border-l-4 border-blue-600 pl-4 py-1 italic text-gray-500">
+            Attn: Hiring Manager / International Chairman
+          </div>
+
+          <p>Dear Hiring Manager,</p>
+          
+          <p>
+            With a solid foundation in <strong>Java</strong>, the <strong>.NET Framework</strong>, and <strong>JavaScript</strong>, combined with hands-on experience in architecting secure, scalable cloud applications, I am eager to contribute to the high-quality technology systems your team provides.
+          </p>
+          
+          <p>
+            Throughout my career, I have demonstrated the ability to lead end-to-end development lifecycles. Most recently, I developed my professional portfolio and <strong>Wint_AI</strong>, a multi-modal application where I architected <strong>Cloudflare Tunnel-based routing</strong> to enable secure, encrypted communication. My technical background includes building applications with <strong>Spring Tool Suite</strong> and <strong>React</strong>, while engineering automated <strong>CI/CD pipelines</strong> using <strong>GitHub Actions</strong>, <strong>Docker</strong>, and <strong>AWS</strong> to ensure consistent, containerized deployments.
+          </p>
+
+          <p>
+            During my time at a specialized technology consulting firm, I focused on delivering robust enterprise solutions while collaborating closely with cross-functional teams. I am well-versed in designing scalable software using <strong>C#</strong>, <strong>Java</strong>, and <strong>JavaScript</strong>, increasing application reliability through modern <strong>Object-Oriented Programming (OOP)</strong> principles. My experience also extends to deploying scalable cloud environments on <strong>AWS (Elastic Beanstalk and EC2)</strong> and utilizing <strong>Nginx</strong> for secure traffic routing.
+          </p>
+
+          <p>
+            Furthermore, I am highly skilled in the Microsoft ecosystem, including <strong>Dynamics CRM 365</strong>, <strong>PowerBI</strong>, and <strong>MS-SQL</strong>, which allows me to provide comprehensive support for reporting systems and business intelligence solutions. I pride myself on writing clean, maintainable code and managing system security through careful access and role management—qualities I believe are essential for your production environment.
+          </p>
+
+          <p>
+            I am currently planning to pursue a <strong>Master’s degree in Computer Science</strong> as a part-time student and am looking for a professional environment where I can grow as an engineer while adding immediate value to your team.
+          </p>
+
+          <p>
+            Thank you for your time and consideration. I would welcome the opportunity to discuss how my technical skills in <strong>.NET</strong> and <strong>cloud architecture</strong> can support your firm’s digital infrastructure.
+          </p>
+
+          <div className="pt-6 border-t border-gray-100">
+            <p className="text-sm font-semibold text-gray-400 uppercase tracking-widest">Sincerely,</p>
+            <p className="text-2xl font-serif text-[#000066] mt-2" style={{ fontFamily: "'Satisfy', cursive" }}>Wint Kay Thwe Aung</p>
+          </div>
+        </div>
+
+        {/* Footer - Actions */}
+        <div className="p-6 border-t bg-gray-50 flex justify-end gap-4">
+          <button 
+            onClick={() => setIsModalOpen(false)}
+            className="px-6 py-2 bg-gray-200 text-gray-700 rounded-full font-bold hover:bg-gray-300 transition-colors"
+          >
+            Close
+          </button>
+          <a 
+            href="/CV_WintKayThweAung.pdf" 
+            download
+            className="px-6 py-2 bg-[#000066] text-white rounded-full font-bold hover:bg-blue-700 transition-colors shadow-lg shadow-blue-200"
+          >
+            Download PDF
+          </a>
+        </div>
+      </motion.div>
+    </div>
+  )}
+</AnimatePresence>
+    
+ </section>
           {/* SKILLS SECTION */}
           <section id="skills">
             <h2 className="text-4xl font-black text-center mb-16 uppercase tracking-tight">Technical Arsenal 🚀</h2>
@@ -146,6 +293,10 @@ Curiosity drives everything I do.
               ].map((skill, i) => (
                 <Card key={i}><CardContent>{skill}</CardContent></Card>
               ))}
+            </div>
+            {/* teach stack */}
+            <div>
+
             </div>
           </section>
 
